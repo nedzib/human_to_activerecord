@@ -76,3 +76,6 @@ gem 'httparty'
 
 #Para manejar .env
 gem 'dotenv-rails', groups: [:development, :test]
+
+#Reflex on the front
+gem "stimulus_reflex", "= 3.5.0.pre8"
