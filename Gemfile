@@ -70,3 +70,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+#Para la interaccion con la api de openai
+gem 'httparty'
+
+#Para manejar .env
+gem 'dotenv-rails', groups: [:development, :test]
