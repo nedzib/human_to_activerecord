@@ -1,0 +1,40 @@
+<div class="container mx-auto p-4 bg-gray-100 shadow-md rounded-lg max-w-2xl" data-controller="translator">
+  <div class="flex flex-col lg:flex-row justify-between w-full items-center mb-4 lg:mb-8 px-2">
+    <div class="flex flex-row">
+      <div>
+        <h1 class="h-6 text-2xl font-semibold text-red-500 mb-0">Human</h1>
+        <h2 class="text-sm text-red-700">Language</h2>
+      </div>
+      <div>
+        <h1 class="text-2xl font-semibold text-red-500 mx-3">to</h1>
+      </div>
+      <div>
+        <h1 class="h-6 text-2xl font-semibold text-red-500">ActiveRecord</h1>
+        <h2 class="text-sm text-red-700">Relation</h2>
+      </div>
+    </div>
+    <div class="flex flex-row items-center">
+      <%= link_to 'https://github.com/nedzib/human_to_activerecord', target: "_blank", class: "h-12 bg-red-500 hover:bg-red-400 text-white font-bold p-2 my-4 border-b-4 border-red-700 hover:border-red-500 rounded-xl flex flex-row items-center" do %>
+        <%= image_tag 'gh_logo.webp', class: 'w-7 mr-2' %>
+        <h1 class="text-base font-semibold ">Check on github</h1>
+      <% end %>
+      <%= link_to 'https://twitter.com/Ned_zib', target: "_blank", class: "h-12 bg-red-500 hover:bg-red-400 text-white font-bold px-2 ml-2 border-b-4 border-red-700 hover:border-red-500 rounded-xl flex items-center" do %>
+        <%= image_tag 'x_logo.webp', class: 'w-7' %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center">
+    <div class="w-full flex flex-col lg:flex-row">
+      <%= text_area_tag(:message, '', placeholder: "Ex. Show me all persons with age between 20 and 65", class: "w-full p-4 rounded border border-gray-300 m-2 placeholder-gray-500", 'data-translator-target': "message" ) %>
+      <textarea id="response" type="text" class="w-full p-4 rounded border border-gray-300 m-2 placeholder-gray-500" placeholder="Person.where(age: 20..65)" readonly></textarea>
+    </div>
+    <button id='button_translate' data-action="click->translator#translate" class="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 my-4 border-b-4 border-red-700 hover:border-red-500 rounded-xl flex flex-row items-center">
+      to ActiveRecord
+      <svg id='spin' class="hidden animate-spin ml-1 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+    </button>
+  </div>
+</div>

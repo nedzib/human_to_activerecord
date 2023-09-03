@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HumanToActiverecord</title>
+    <title>Human to ActiveRecord</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="flex items-center text-center h-full w-full">
+    <div class="w-full">
+      <%= yield %>
+      <footer class="text-center mt-8 text-gray-500 h-full">
+        Inspired by <a href="https://www.sqltranslate.app/" class="underline">https://www.sqltranslate.app/</a>
+      </footer>
+    </div>
   </body>
 </html>
