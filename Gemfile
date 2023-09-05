@@ -83,3 +83,4 @@ gem "hiredis"
 gem "redis-actionpack", "~> 5.3"
 
 gem 'redis-rails'
+gem "cable_ready", "= 5.0.0.pre8"

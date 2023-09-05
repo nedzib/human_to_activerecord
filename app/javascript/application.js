@@ -2,3 +2,4 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import { application } from "controllers/application"
+import "channels"
