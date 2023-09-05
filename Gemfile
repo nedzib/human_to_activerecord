@@ -27,9 +27,6 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-# Use Redis adapter to run Action Cable in production
-gem "redis", "~> 4.0"
-
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -79,3 +76,10 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 #Reflex on the front
 gem "stimulus_reflex", "= 3.5.0.pre8"
+
+gem "redis", ">= 4.0", require: ["redis", "redis/connection/hiredis"]
+gem "hiredis"
+
+gem "redis-actionpack", "~> 5.3"
+
+gem 'redis-rails'

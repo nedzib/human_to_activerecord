@@ -14,8 +14,6 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
-  config.session_store :cache_store
-
   # Enable server timing
   config.server_timing = true
 
@@ -69,4 +67,17 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  config.cache_store = :redis_cache_store, {
+    driver: :hiredis,
+    url: ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" }
+  }
+
+  config.session_store(
+    :cache_store,
+    key: "_session_development",
+    compress: true,
+    pool_size: 5,
+    expire_after: 1.year
+  )
 end
